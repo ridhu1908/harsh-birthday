@@ -1,1 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Happy Birthday Harshu 🎂</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, #ffe7f0 0%, #ffd1e1 35%, #f8b8d0 100%);
+      color: #5a2940;
+      overflow-x: hidden;
+    }
+
+    .hearts span {
+      position: fixed;
+      bottom: -30px;
+      font-size: 22px;
+      animation: float 8s linear infinite;
+      opacity: 0.75;
+      z-index: 0;
+    }
+
+    .hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .hearts span:nth-child(2) { left: 25%; animation-delay: 2s; }
+    .hearts span:nth-child(3) { left: 45%; animation-delay: 4s; }
+    .hearts span:nth-child(4) { left: 65%; animation-delay: 1s; }
+    .hearts span:nth-child(5) { left: 82%; animation-delay: 3s; }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      20% { opacity: 0.8; }
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: auto;
+      padding: 30px 18px 50px;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.62);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 30px;
+      padding: 35px 22px;
+      margin: 25px 0;
+      box-shadow: 0 15px 40px rgba(120, 45, 80, 0.15);
+    }
+
+    .small {
+      font-size: 15px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #9c5575;
+    }
+
+    h1 {
+      font-size: clamp(42px, 12vw, 75px);
+      margin: 15px 0;
+      color: #8e315a;
+    }
+
+    .name {
+      font-size: 25px;
+      color: #b34470;
+      margin-bottom: 15px;
+    }
+
+    .cake {
+      font-size: 80px;
+      margin: 15px 0;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      50% { transform: translateY(-10px); }
+    }
+
+    .intro {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-top: 15px;
+    }
+
+    button {
+      border: none;
+      border-radius: 30px;
+      padding: 14px 25px;
+      margin-top: 22px;
+      background: #a83d68;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(120,40,80,0.25);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .message {
+      display: none;
+      margin-top: 25px;
+      font-size: 17px;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    .message.show {
+      display: block;
+      animation: appear 0.8s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .wish {
+      font-size: 21px;
+      line-height: 1.8;
+    }
+
+    .stars {
+      font-size: 24px;
+      letter-spacing: 8px;
+      margin: 15px 0;
+    }
+
+    footer {
+      margin-top: 35px;
+      font-size: 14px;
+      color: #874761;
+    }
+
+    .signature {
+      margin-top: 18px;
+      font-size: 20px;
+      color: #a83d68;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hearts">
+    <span>♡</span>
+    <span>💗</span>
+    <span>♡</span>
+    <span>🌷</span>
+    <span>💗</span>
+  </div>
+
+  <main class="page">
+
+    <section class="card">
+      <div class="small">A little birthday surprise</div>
+
+      <div class="cake">🎂</div>
+
+      <h1>Happy Birthday!</h1>
+
+      <div class="name">Harshu ♡</div>
+
+      <div class="stars">✦ ✧ ✦</div>
+
+      <p class="intro">
+        Today is your special day, so this little corner of the internet
+        is just for you. 🌷
+      </p>
+
+      <button onclick="showMessage()">
+        Open your surprise 💌
+      </button>
+
+      <div id="message" class="message">
+        <p>
+          Happy Birthday, Harshu! 🎂✨
+        </p>
+
+        <br>
+
+        <p>
+          I hope this new year of your life brings you lots of happiness,
+          beautiful memories, success, good health and countless reasons
+          to smile. Sometimes people don't realise how much their presence
+          can mean to someone, but even the smallest conversations and
+          little moments can become special memories.
+        </p>
+
+        <br>
+
+        <p>
+          So today, forget all the stress for a while, enjoy your day,
+          eat lots of cake and make some really good memories. 😂🎂
+          May the things you wish for slowly find their way to you,
+          and may this year be kinder, brighter and happier than the last.
+        </p>
+
+        <br>
+
+        <p>
+          Keep smiling, keep being yourself and keep chasing the things
+          that make you genuinely happy. You deserve a beautiful birthday
+          and an even better year ahead. 🌷✨
+        </p>
+
+        <div class="signature">
+          Once again... Happy Birthday, Harshu! 💗
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="small">One more thing...</div>
+
+      <br>
+
+      <p class="wish">
+        May your 19th year be filled with<br>
+        ✨ happiness<br>
+        🌷 beautiful memories<br>
+        🎯 success<br>
+        😂 endless laughter<br>
+        💫 and lots of unexpected good moments.
+      </p>
+
+      <br>
+
+      <div class="stars">♡ ✦ ♡ ✦ ♡</div>
+
+      <p>
+        Have the happiest birthday ever! 🎂🥳
+      </p>
+    </section>
+
+    <footer>
+      Made with lots of effort & a little bit of craziness 🌷
+      <br>
+      <div class="signature">For Harshu ♡</div>
+    </footer>
+
+  </main>
+
+  <script>
+    function showMessage() {
+      const message = document.getElementById("message");
+      message.classList.add("show");
+
+      setTimeout(() => {
+        message.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }, 100);
+    }
+  </script>
+
+</body>
+  </html>
