@@ -17,24 +17,608 @@
       font-family: Georgia, serif;
       min-height: 100vh;
       background:
-        radial-gradient(circle at top, #ffe7f0 0%, #ffd1e1 35%, #f8b8d0 100%);
+        radial-gradient(circle at top, #fff0f6 0%, #ffd7e6 40%, #f5b5ce 100%);
       color: #5a2940;
       overflow-x: hidden;
     }
 
+    /* Floating hearts */
     .hearts span {
       position: fixed;
-      bottom: -30px;
+      bottom: -40px;
       font-size: 22px;
-      animation: float 8s linear infinite;
-      opacity: 0.75;
+      animation: float 9s linear infinite;
+      opacity: 0;
       z-index: 0;
+      pointer-events: none;
     }
 
-    .hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .hearts span:nth-child(2) { left: 25%; animation-delay: 2s; }
-    .hearts span:nth-child(3) { left: 45%; animation-delay: 4s; }
-    .hearts span:nth-child(4) { left: 65%; animation-delay: 1s; }
+    .hearts span:nth-child(1) {
+      left: 8%;
+      animation-delay: 0s;
+    }
+
+    .hearts span:nth-child(2) {
+      left: 25%;
+      animation-delay: 2s;
+    }
+
+    .hearts span:nth-child(3) {
+      left: 45%;
+      animation-delay: 4s;
+    }
+
+    .hearts span:nth-child(4) {
+      left: 65%;
+      animation-delay: 1s;
+    }
+
+    .hearts span:nth-child(5) {
+      left: 82%;
+      animation-delay: 3s;
+    }
+
+    .hearts span:nth-child(6) {
+      left: 92%;
+      animation-delay: 5s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.75;
+      }
+
+      100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Butterflies */
+    .butterfly {
+      position: fixed;
+      font-size: 25px;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.7;
+      animation: butterflyMove 10s ease-in-out infinite;
+    }
+
+    .b1 {
+      left: 10%;
+      top: 30%;
+      animation-delay: 1s;
+    }
+
+    .b2 {
+      right: 10%;
+      top: 55%;
+      animation-delay: 4s;
+    }
+
+    .b3 {
+      left: 75%;
+      top: 15%;
+      animation-delay: 2s;
+    }
+
+    @keyframes butterflyMove {
+      0%, 100% {
+        transform: translate(0, 0) rotate(-8deg);
+      }
+
+      50% {
+        transform: translate(25px, -35px) rotate(8deg);
+      }
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: auto;
+      padding: 30px 18px 50px;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.64);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.85);
+      border-radius: 30px;
+      padding: 35px 22px;
+      margin: 25px 0;
+      box-shadow: 0 15px 40px rgba(120, 45, 80, 0.15);
+
+      animation: cardAppear 1.2s ease both;
+    }
+
+    @keyframes cardAppear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .small {
+      font-size: 15px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #9c5575;
+    }
+
+    h1 {
+      font-size: clamp(42px, 12vw, 75px);
+      margin: 15px 0;
+      color: #8e315a;
+
+      animation: glowText 2.5s ease-in-out infinite;
+    }
+
+    @keyframes glowText {
+      0%, 100% {
+        text-shadow: 0 0 5px rgba(255,255,255,0.3);
+      }
+
+      50% {
+        text-shadow:
+          0 0 8px rgba(255,255,255,0.9),
+          0 0 20px rgba(255,170,200,0.8);
+      }
+    }
+
+    .name {
+      font-size: 25px;
+      color: #b34470;
+      margin-bottom: 15px;
+    }
+
+    .cake {
+      font-size: 80px;
+      margin: 15px 0;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    .intro {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-top: 15px;
+    }
+
+    /* Panda */
+    .panda {
+      font-size: 95px;
+      margin: 15px 0;
+      animation: pandaFloat 2.5s ease-in-out infinite;
+      transition: 0.4s;
+    }
+
+    @keyframes pandaFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .question {
+      font-size: 21px;
+      line-height: 1.6;
+      margin: 10px 0;
+      color: #7c3454;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      border-radius: 30px;
+      padding: 14px 25px;
+      margin-top: 22px;
+      background: #a83d68;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(120,40,80,0.25);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.07);
+    }
+
+    .yes-btn {
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 8px 20px rgba(120,40,80,0.25);
+      }
+
+      50% {
+        box-shadow:
+          0 8px 25px rgba(168,61,104,0.45),
+          0 0 18px rgba(255,160,195,0.7);
+      }
+    }
+
+    .no-btn {
+      background: #c9869f;
+    }
+
+    .sad {
+      animation: sadPanda 0.7s ease;
+    }
+
+    @keyframes sadPanda {
+      25% {
+        transform: translateX(-8px);
+      }
+
+      50% {
+        transform: translateX(8px);
+      }
+
+      75% {
+        transform: translateX(-5px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .reaction {
+      display: none;
+      margin-top: 15px;
+      color: #a83d68;
+      font-size: 17px;
+    }
+
+    .reaction.show {
+      display: block;
+      animation: appear 0.6s ease;
+    }
+
+    /* Hidden birthday message */
+    .message {
+      display: none;
+      margin-top: 25px;
+      font-size: 17px;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    .message.show {
+      display: block;
+      animation: appear 0.9s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .wish {
+      font-size: 21px;
+      line-height: 1.8;
+    }
+
+    .stars {
+      font-size: 24px;
+      letter-spacing: 8px;
+      margin: 15px 0;
+      animation: sparkle 2s ease-in-out infinite;
+    }
+
+    @keyframes sparkle {
+      50% {
+        transform: scale(1.08);
+        opacity: 0.7;
+      }
+    }
+
+    footer {
+      margin-top: 35px;
+      font-size: 14px;
+      color: #874761;
+    }
+
+    .signature {
+      margin-top: 18px;
+      font-size: 20px;
+      color: #a83d68;
+    }
+
+    /* Sparkles */
+    .sparkle {
+      position: fixed;
+      pointer-events: none;
+      font-size: 18px;
+      animation: sparkleFly 1.5s ease-out forwards;
+      z-index: 10;
+    }
+
+    @keyframes sparkleFly {
+      from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(-80px) scale(0.3);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hearts">
+    <span>♡</span>
+    <span>💗</span>
+    <span>♡</span>
+    <span>🌷</span>
+    <span>💗</span>
+    <span>♡</span>
+  </div>
+
+  <div class="butterfly b1">🦋</div>
+  <div class="butterfly b2">🦋</div>
+  <div class="butterfly b3">🦋</div>
+
+  <main class="page">
+
+    <!-- Main Birthday Card -->
+    <section class="card">
+
+      <div class="small">A little birthday surprise</div>
+
+      <div class="cake">🎂</div>
+
+      <h1>Happy Birthday!</h1>
+
+      <div class="name">Harshu ♡</div>
+
+      <div class="stars">✦ ✧ ✦</div>
+
+      <p class="intro">
+        Today is your special day, so this little corner of the internet
+        is just for you. 🌷
+      </p>
+
+    </section>
+
+
+    <!-- Panda Surprise -->
+    <section class="card">
+
+      <div class="panda" id="panda">🐼</div>
+
+      <p class="question">
+        Harshu, are you ready for<br>
+        a little birthday surprise? 💌
+      </p>
+
+      <div class="buttons">
+
+        <button class="yes-btn" onclick="sayYes()">
+          YES 💗
+        </button>
+
+        <button class="no-btn" onclick="sayNo()">
+          NO 🥺
+        </button>
+
+      </div>
+
+      <div id="reaction" class="reaction">
+        Awwww 🥺💧 Try the other button...
+      </div>
+
+    </section>
+
+
+    <!-- Hidden Message -->
+    <section class="card">
+
+      <div id="message" class="message">
+
+        <p>
+          Happy Birthday, Harshu! 🎂✨
+        </p>
+
+        <br>
+
+        <p>
+          I hope this new year of your life brings you lots of happiness,
+          beautiful memories, success, good health and countless reasons
+          to smile. Sometimes people don't realise how much their presence
+          can mean to someone, but even the smallest conversations and
+          little moments can become special memories.
+        </p>
+
+        <br>
+
+        <p>
+          So today, forget all the stress for a while, enjoy your day,
+          eat lots of cake and make some really good memories. 😂🎂
+          May the things you wish for slowly find their way to you,
+          and may this year be kinder, brighter and happier than the last.
+        </p>
+
+        <br>
+
+        <p>
+          Keep smiling, keep being yourself and keep chasing the things
+          that make you genuinely happy. You deserve a beautiful birthday
+          and an even better year ahead. 🌷✨
+        </p>
+
+        <div class="signature">
+          Once again... Happy Birthday, Harshu! 💗
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Wishes -->
+    <section class="card">
+
+      <div class="small">One more thing...</div>
+
+      <br>
+
+      <p class="wish">
+        May your birthday be filled with<br>
+        ✨ happiness<br>
+        🌷 beautiful memories<br>
+        🎯 success<br>
+        😂 endless laughter<br>
+        💫 and lots of unexpected good moments.
+      </p>
+
+      <br>
+
+      <div class="stars">♡ ✦ ♡ ✦ ♡</div>
+
+      <p>
+        Have the happiest birthday ever! 🎂🥳
+      </p>
+
+    </section>
+
+
+    <footer>
+      Made with lots of effort & a little bit of craziness 🌷
+
+      <br>
+
+      <div class="signature">
+        For Harshu ♡
+      </div>
+    </footer>
+
+  </main>
+
+
+  <script>
+
+    function sayNo() {
+
+      const panda = document.getElementById("panda");
+      const reaction = document.getElementById("reaction");
+
+      panda.textContent = "🐼💧";
+      panda.classList.remove("sad");
+
+      void panda.offsetWidth;
+
+      panda.classList.add("sad");
+
+      reaction.textContent =
+        "Awwww 🥺💧 The panda is sad... try YES 💗";
+
+      reaction.classList.add("show");
+    }
+
+
+    function sayYes() {
+
+      const panda = document.getElementById("panda");
+      const reaction = document.getElementById("reaction");
+      const message = document.getElementById("message");
+
+      panda.textContent = "🐼💗";
+      reaction.textContent =
+        "YAYYYYY! 🥹💗 The panda is happy!!";
+
+      reaction.classList.add("show");
+
+      message.classList.add("show");
+
+      createSparkles();
+
+      setTimeout(() => {
+
+        message.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      }, 500);
+    }
+
+
+    function createSparkles() {
+
+      const symbols = ["💗", "✨", "🦋", "♡", "🌷"];
+
+      for (let i = 0; i < 18; i++) {
+
+        const sparkle = document.createElement("div");
+
+        sparkle.className = "sparkle";
+
+        sparkle.textContent =
+          symbols[Math.floor(Math.random() * symbols.length)];
+
+        sparkle.style.left =
+          Math.random() * 100 + "vw";
+
+        sparkle.style.top =
+          55 + Math.random() * 35 + "vh";
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => {
+          sparkle.remove();
+        }, 1500);
+      }
+    }
+
+  </script>
+
+</body>
+  </html>    .hearts span:nth-child(4) { left: 65%; animation-delay: 1s; }
     .hearts span:nth-child(5) { left: 82%; animation-delay: 3s; }
 
     @keyframes float {
